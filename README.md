@@ -15,3 +15,7 @@ Via la console, se placer dans un premier temps dans le dossier du projet. Il fa
       python manage.py runserver 0.0.0.0:8000
  
 L'adresse du serveur et le port pouvant être modifiées, on peut alors accéder au service via l'adresse 'adresse_ip_ou_localhost':8000.
+
+### Liens utiles
+
+https://www.django-rest-framework.org/tutorial/quickstart/
