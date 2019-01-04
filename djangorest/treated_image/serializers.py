@@ -26,3 +26,14 @@ class TreatedImageSerializer(serializers.HyperlinkedModelSerializer):
             rect.save()
             image.rects.add(rect)
         return image
+
+    def update(self, instance, validated_data):
+        new_rects_data = validated_data.pop('rects')
+        for rect in instance.rects.all():
+            instance.rects.filter(id=rect.id).delete()
+        for i in range(len(new_rects_data)):
+            rect = ImageRect.objects.create(**new_rects_data[i])
+            rect.save()
+            instance.rects.add(rect)
+        instance.save()
+        return instance

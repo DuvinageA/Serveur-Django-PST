@@ -12,5 +12,6 @@ class ImageRect(models.Model):
 
 
 class TreatedImage(models.Model):
-    image = models.URLField()
+    link = models.URLField()
+    path = models.TextField()
     rects = models.ManyToManyField(ImageRect)
